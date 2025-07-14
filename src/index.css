@@ -38,6 +38,13 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Game specific colors */
+    --game-background: 146 71% 23%;
+    --game-secondary: 48 94% 68%;
+    --game-gold: 45 93% 47%;
+    --game-border: 38 92% 50%;
+    --game-button-shadow: 38 69% 40%;
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
