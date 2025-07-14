@@ -64,12 +64,17 @@ const BauCuaGame: React.FC = () => {
       canvas.height = 128;
       ctx.fillStyle = 'white';
       ctx.fillRect(0, 0, 128, 128);
-      ctx.fillStyle = 'black';
-      ctx.font = 'bold 80px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(i.toString(), 64, 64);
-      textures.push(new THREE.CanvasTexture(canvas));
+      
+      // Create and load image
+      const img = new Image();
+      img.onload = () => {
+        ctx.drawImage(img, 8, 8, 112, 112); // Draw image with padding
+        textures[i-1].needsUpdate = true;
+      };
+      img.src = symbols[i].image;
+      
+      const texture = new THREE.CanvasTexture(canvas);
+      textures.push(texture);
     }
     return textures;
   }, []);
